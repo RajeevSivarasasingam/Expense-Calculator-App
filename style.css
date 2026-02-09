@@ -1,0 +1,232 @@
+:root {
+    --bg-color: #f7f9fc;
+    --container-bg: #ffffff;
+    --text-color: #333;
+    --primary-color: #5e60ce; 
+    --secondary-color: #6930c3;
+    --accent-green: #2ecc71;
+    --accent-red: #c0392b;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --border-radius: 15px;
+    --font-family: 'Outfit', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    background: var(--container-bg);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 450px;
+    margin: 30px auto;
+    transition: transform 0.3s ease;
+}
+
+header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    margin: 0;
+    font-weight: 600;
+    color: var(--secondary-color);
+    letter-spacing: 1px;
+}
+
+h3 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin: 30px 0 15px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+h4 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.balance-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.balance-container h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    letter-spacing: 1px;
+}
+
+.inc-exp-container {
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    border-radius: var(--border-radius);
+    border: 1px solid #f0f0f0;
+}
+
+.inc-exp-container > div {
+    flex: 1;
+    text-align: center;
+}
+
+.inc-exp-container > div:first-of-type {
+    border-right: 1px solid #dedede;
+}
+
+.money {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.money.plus {
+    color: var(--accent-green);
+}
+
+.money.minus {
+    color: var(--accent-red);
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.list li {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    border: 1px solid #f9f9f9;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.list li:hover {
+    transform: translateX(2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+
+.list li.plus {
+    border-right: 5px solid var(--accent-green);
+}
+
+.list li.minus {
+    border-right: 5px solid var(--accent-red);
+}
+
+.delete-btn {
+    cursor: pointer;
+    background-color: var(--accent-red);
+    color: #fff;
+    border: 0;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-120%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+    opacity: 1;
+}
+
+.form-control {
+    margin-bottom: 20px;
+}
+
+.form-control label {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-control input {
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    display: block;
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.form-control input:focus {
+    outline: 0;
+    border-color: var(--primary-color);
+}
+
+.btn {
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 4px 15px rgba(94, 96, 206, 0.4);
+    color: #fff;
+    border: 0;
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px;
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(94, 96, 206, 0.6);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 20px;
+        width: 100%;
+    }
+    
+    .balance-container h1 {
+        font-size: 2rem;
+    }
+}
