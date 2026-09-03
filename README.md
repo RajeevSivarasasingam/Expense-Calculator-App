@@ -105,7 +105,7 @@ cp .env.example .env
 
 Edit the `.env` file with your configuration:
 ```env
-PORT=5000
+PORT=8000
 MONGODB_URI=mongodb://localhost:27017/spendwise
 JWT_SECRET=your_jwt_secret_key_here_change_this_in_production
 NODE_ENV=development
@@ -133,7 +133,7 @@ net start MongoDB
 cd server
 npm run dev
 ```
-The backend will run on `http://localhost:5000`
+The backend will run on `http://localhost:8000`
 
 ### Start Frontend Development Server
 ```bash
@@ -149,7 +149,7 @@ Open your browser and navigate to: `http://localhost:5173`
 
 | Variable | Description | Default | Required |
 |----------|-------------|---------|----------|
-| `PORT` | Backend server port | `5000` | No |
+| `PORT` | Backend server port | `8000` | No |
 | `MONGODB_URI` | MongoDB connection string | `mongodb://localhost:27017/spendwise` | Yes |
 | `JWT_SECRET` | Secret key for JWT token generation | - | Yes |
 | `NODE_ENV` | Environment mode | `development` | No |
