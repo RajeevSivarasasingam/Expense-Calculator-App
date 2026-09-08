@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { useAuth } from '../context/AuthContext'
+import { useTheme } from '../context/ThemeContext'
 
 const Settings = () => {
   const { user, logout } = useAuth()
+  const { isDarkMode, toggleDarkMode } = useTheme()
   const [formData, setFormData] = useState({
     name: user?.name || '',
     email: user?.email || ''
@@ -93,13 +95,22 @@ const Settings = () => {
         <div className="card lg:col-span-2 hover:shadow-md transition-shadow duration-200">
           <h2 className="text-xl font-semibold text-gray-900 mb-6">App Preferences</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+            <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg dark:bg-gray-700">
               <div>
-                <h3 className="font-medium text-gray-900">Dark Mode</h3>
-                <p className="text-sm text-gray-600">Toggle dark theme</p>
+                <h3 className="font-medium text-gray-900 dark:text-gray-100">Dark Mode</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Toggle dark theme</p>
               </div>
-              <button className="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors">
-                <span className="translate-x-1 inline-block h-4 w-4 transform rounded-full bg-white transition-transform"></span>
+              <button
+                onClick={toggleDarkMode}
+                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                  isDarkMode ? 'bg-primary-600' : 'bg-gray-200'
+                }`}
+              >
+                <span
+                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                    isDarkMode ? 'translate-x-6' : 'translate-x-1'
+                  }`}
+                ></span>
               </button>
             </div>
 
